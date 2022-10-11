@@ -1,0 +1,16 @@
+.th-quiz__legend {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.th-quiz__question {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 1.5rem;
+}
+
+.th-quiz__question-text {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3;
+}

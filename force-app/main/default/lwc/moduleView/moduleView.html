@@ -1,0 +1,46 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+
+    <div class="tds-content-panel slds-text-body_small tds-color_meteorite slds-is-relative slds-wrap" style="border-top-color: rgb(23, 76, 131)">
+        <div class="slds-grid tds-content-panel_body slds-border_bottom">
+            <div class="slds-grow-none slds-shrink-none">
+                <div>
+                    <a href={module.Url__c} aria-hidden="true" tabindex="-1" class="slds-is-relative slds-show_inline-block">
+                        <img src={module.image__c} alt="" style="height: 90px; width: 90px;">
+                        <template if:true={module.Modules_Progress__r}>
+                            <div style="position: absolute; top: -0.25rem; right: -0.75rem; border: 3px solid white; border-radius: 100%;">
+                                <span class="slds-icon_container slds-icon_container_circle slds-icon-action-check tds-bg_success slds-show" style="background-color: #048149; color: white; font-size: large;">✓
+                                    <span class="slds-assistive-text">complete</span>
+                                </span>
+                            </div>
+                        </template>
+                    </a>
+                </div>
+            </div>
+            <div class="slds-grow slds-var-m-left_large">
+                <div class="slds-float_right">
+                    <div class="slds-grid">
+                        <div class="slds-var-m-left_small">
+                            <span class="tds-badge slds-badge slds-grid_vertical-align-center">+{module.Points__c} points</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-var-m-top_x-small">
+                    <div>Module</div>
+                    <h2 class="tds-text-size_6 slds-hyphenate tds-text_bold slds-var-m-bottom_xx-small"><a href={module.Url__c}>{module.Name}</a></h2><p>{module.Description__c}</p><p>~{module.Time__c} mins</p>
+                </div>
+            </div>
+
+        </div>
+        <lightning-card variant="narrow" title="Units" icon-name="standard:accounts">
+            <template if:true={module.Units__r}>
+                <template for:each={module.Units__r} for:item="unit">
+                    <lightning-accordion key={unit.Id} allow-multiple-sections-open="true">
+                        <c-unit-view this-units={thisUnits} unit={unit}></c-unit-view>
+                    </lightning-accordion>
+                </template>
+            </template>
+        </lightning-card>
+    </div>
+</template>

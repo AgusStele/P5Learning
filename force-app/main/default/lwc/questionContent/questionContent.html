@@ -1,0 +1,24 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-button label="Neutral" title="Non-primary action" onclick={handleTest} class="slds-m-left_x-small"></lightning-button>
+    <template if:true={thisQuestions}>
+        <template for:each={thisQuestions} for:item="question">
+            <lightning-card key={question.Id} title={question.Content__c} variant="Narrow" icon-name="action:new_note">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                      <select class="slds-select" multiple="">
+                        <template if:true={question.Optios__r}>
+                            <template for:each={question.Optios__r} for:item="option">
+                                <option key={option.Id} data-id={option.Id} data-qid={question.Id} onclick={handleClick}>{option.Content__c}
+                                </option>
+                            </template>
+                        </template>
+                      </select>
+                    </div>
+                  </div>
+            </lightning-card>
+        </template>
+    </template>
+    <lightning-button variant="brand" label="Check the Quiz" title="Primary action" onclick={handleSubmit} class="slds-m-left_x-small"></lightning-button>
+</template>

@@ -3,7 +3,7 @@
     <fullName>Counter__c</fullName>
     <externalId>false</externalId>
     <label>Counter</label>
-    <precision>1</precision>
+    <precision>3</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>

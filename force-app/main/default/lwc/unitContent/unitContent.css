@@ -1,0 +1,25 @@
+.th-badge--primary {
+    background-color: #0070d2;
+    color: #fff;
+}
+
+.th-challenge {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 0 0 rgb(0 0 0 / 10%);
+}
+
+.th-challenge__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e2e2;
+    overflow: hidden;
+}
+
+.th-challenge__header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tds-text_bold {
+    font-weight: 700;
+}

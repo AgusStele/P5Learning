@@ -5,7 +5,7 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Trail_Progress__c.Progess__c</column>
+            <column>Trail_Progress__c.Status__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>

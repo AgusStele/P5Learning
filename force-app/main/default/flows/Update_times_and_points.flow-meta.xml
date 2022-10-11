@@ -51,21 +51,21 @@
         <filterLogic>or</filterLogic>
         <filters>
             <field>Points__c</field>
-            <operator>EqualTo</operator>
+            <operator>IsNull</operator>
             <value>
-                <numberValue>0.0</numberValue>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <filters>
             <field>Time__c</field>
-            <operator>EqualTo</operator>
+            <operator>IsNull</operator>
             <value>
-                <numberValue>0.0</numberValue>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Trail_Modele__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

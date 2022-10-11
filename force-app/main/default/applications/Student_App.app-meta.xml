@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Student</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>TrailView</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Trail__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>TrailView</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Trail__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>recordPageUnits</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Unit__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>recordPageUnits</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Unit__c</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
@@ -11,17 +55,57 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Student App</label>
     <navType>Standard</navType>
-    <tabs>User_learning__c</tabs>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Student</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Student</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Student</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>recordPageUnits</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Unit__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Student</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>recordPageUnits</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Unit__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Student</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TrailView</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Trail__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Student</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>TrailView</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Trail__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Student</profile>
+    </profileActionOverrides>
     <tabs>Trail__c</tabs>
-    <tabs>Trail_Modele__c</tabs>
     <tabs>Module__c</tabs>
     <tabs>Unit__c</tabs>
-    <tabs>Question__c</tabs>
-    <tabs>Option__c</tabs>
-    <tabs>Trail_Progress__c</tabs>
-    <tabs>Module_Progress__c</tabs>
-    <tabs>Unit_Progress__c</tabs>
-    <tabs>Question_Progress__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Student_App_UtilityBar</utilityBar>
 </CustomApplication>

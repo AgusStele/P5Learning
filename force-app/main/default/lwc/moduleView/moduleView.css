@@ -1,0 +1,38 @@
+.tds-content-panel { 
+    background: #fff; 
+    border-radius: .5rem; 
+    border-top: .5rem solid rgb(23, 76, 131);
+}
+
+.tds-content-panel_body { 
+    padding: 1.5rem;
+}
+
+.tds-color_meteorite { 
+    color: #585858;
+}
+
+.tds-badge { 
+    text-transform: uppercase; 
+    letter-spacing: .0625em;
+}
+
+.tds-bg_sand { 
+    background-color: #f5f5f5;
+}
+
+.tds-bg_success { 
+    background-color: #048149;
+}
+
+.slds-progress-bar {
+    border-radius: 0.5rem;
+    height: 0.875rem;
+}
+
+.slds-progress-bar__value {
+    display: block;
+    border-radius: 0.5rem;
+    background: rgb(0,112,210);
+    height: 100%;
+}

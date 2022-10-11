@@ -1,0 +1,48 @@
+<template>
+    <lightning-card>
+        <template if:true={thisUnit}>
+            <div class="slds-container_x-large slds-container_center slds-p-around_x-large">
+                <div class="slds-grid">
+                    <div class="slds-size_3-of-12 slds-col slds-order_2 slds-show_large slds-p-left_x-large unit-sidebar slds-is-relative">
+                        <div class="slds-m-bottom_medium" style="position: unset; top: unset;">
+                            <div class="th-text--small th-text--bold"> Time Estimate </div>
+                            <div class="sidebar-content">
+                                <p class="slds-text-body_small">
+                                    🕛 About <b>{thisUnit.Time__c}</b> mins
+                                </p>
+                            </div>
+                            <div class="topic-list-nav slds-m-bottom_large slds-m-top_x-small">
+                                <div class="topic-challenge slds-p-vertical_x-small slds-m-vertical_small active">
+                                    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-p-vertical_x-small">
+                                        <span> Challenge </span>
+                                        <span class="slds-badge th-badge--primary">+{thisUnit.Points__c} points</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <article class="slds-large-size_9-of-12 slds-size_12-of-12 slds-col slds-order_1">
+                        <h1 class="slds-p-top_small slds-text-heading_large">{thisUnit.Name}</h1>
+                        <br>
+                        <div>{thisUnit.Content__c}</div>
+                        <div>
+                            <section class="th-challenge slds-m-top--xx-large th-quiz">
+                                <form action>
+                                    <header class="th-challenge__header">
+                                        <div class="th-challenge__header-container">
+                                            <h2 class="slds-text-heading_medium tds-text_bold">Quiz</h2>
+                                            <span class="slds-text-heading_small tds-text_bold slds-text-color_success">+{thisUnit.Points__c} points</span>
+                                        </div>
+                                    </header>
+                                    <template if:true={thisQuestions}>
+                                        <c-question-content this-questions={thisQuestions} unit-id={recordId}></c-question-content>
+                                    </template>
+                                </form>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

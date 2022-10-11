@@ -4,8 +4,8 @@
     <externalId>false</externalId>
     <label>Module Progress</label>
     <referenceTo>Module_Progress__c</referenceTo>
-    <relationshipLabel>Unit Progress</relationshipLabel>
-    <relationshipName>Unit_Progress</relationshipName>
+    <relationshipLabel>Units Progress</relationshipLabel>
+    <relationshipName>Units_Progress</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackHistory>false</trackHistory>

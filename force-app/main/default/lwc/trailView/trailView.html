@@ -1,0 +1,59 @@
+<template>
+    <lightning-card>
+        <template if:true={wrapper}>
+            <div class="tds-content-header slds-text-body_small tds-color_meteorite slds-is-relative tds-box-shadow_small slds-border_bottom">
+                <div class="slds-grid slds-grid_vertical-align-center" style="height: 5rem; background-color:rgb(5, 103, 100);border-top-left-radius: 10px; border-top-right-radius: 10px;"></div>
+                <div class="slds-container_center slds-container_x-large slds-var-p-horizontal_large slds-var-p-top_large">
+                    <div class="slds-float_right slds-text-align_right slds-var-m-left_small">
+                        <div class="">
+                            <div class="slds-var-m-bottom_small">
+                                <span class="tds-badge slds-badge slds-grid_vertical-align-center">+{thisTrail.Points__c} points</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem;">
+                        <div class="slds-var-m-bottom_medium">
+                            <div>Trail</div>
+                            <h1 class="tds-color_black slds-text-heading_large slds-hyphenate tds-text_bold slds-var-m-bottom_xx-small">{thisTrail.Name}</h1>
+                            <p>{thisTrail.Description__c}</p>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-var-p-bottom_large">
+                        <div class="slds-grow-none slds-grid slds-grid_vertical-align-center slds-text-align_right">
+                            <div class="slds-grid slds-grid_vertical-align-center">
+                                <div class="slds-var-m-right_x-small slds-shrink-none">
+                                    <span>~{thisTrail.Time__c} mins</span>
+                                    <div class="slds-progress-bar tds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={progressTrail} role="progressbar" style="min-width: 6rem;"><span class="slds-progress-bar__value" style={style}><span class="slds-assistive-text">{progressTrail}%</span></span></div>
+                                    <p class="slds-grid_vertical-align-center slds-text-align_center">{progressTrail}%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tds-bg_sand slds-var-p-horizontal_x-large slds-var-p-bottom_x-large">
+                <div class="slds-container_medium slds-container_center">
+                    <template if:true={thisModule}>
+                        <template for:each={thisModule} for:item="module">
+                            <!-- pasar modele a view-module -->
+                            <c-module-view key={module.Id} module={module} this-units={thisUnits}></c-module-view>
+                            <!-- <template if:true={module.Units__r}>
+                                <lightning-accordion key={module.Id}>
+                                    <lightning-accordion-section name="A
+                                    Unit" label="">
+                                    <template for:each={module.Units__r} for:item="unit">
+                                        <p key={unit.Id}>{unit.Name}</p>
+                                        <p key={unit.Id}>{unit.Content__c}</p>
+                                        <p key={unit.Id}>{unit.Time__c}</p>
+                                        <p key={unit.Id}>{unit.Points__c}</p>
+                                    </template>
+                                    </lightning-accordion-section>
+                                </lightning-accordion>
+                            </template> -->
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

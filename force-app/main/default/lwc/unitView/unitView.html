@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-border_bottom">
+        <a href={unit.Url__c}><p>{unit.Name}</p></a><br>
+        <p>~{unit.Time__c} mins</p><br>
+        <p>+{unit.Points__c} points</p><br>
+        <template if:true={completedUnit}>
+            <div style="position: absolute; top: -0.25rem; right: -0.75rem; border: 3px solid white; border-radius: 100%;">
+                <span class="slds-icon_container slds-icon_container_circle slds-icon-action-check tds-bg_success slds-show" style="background-color: #048149; color: white; font-size: large;">✓
+                    <span class="slds-assistive-text">complete</span>
+                </span>
+            </div>
+        </template>
+    </div>
+</template>

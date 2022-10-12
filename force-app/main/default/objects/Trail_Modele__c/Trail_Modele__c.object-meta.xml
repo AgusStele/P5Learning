@@ -154,14 +154,14 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <gender>Feminine</gender>
-    <label>Trail-Modele</label>
+    <label>Trail Module</label>
     <nameField>
         <displayFormat>TM-{0000}</displayFormat>
         <label>Trail-Modele Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Trails-Modules</pluralLabel>
+    <pluralLabel>Trails Modules</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

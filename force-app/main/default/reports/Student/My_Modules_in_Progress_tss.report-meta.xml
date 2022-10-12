@@ -19,7 +19,7 @@
         <value>1</value>
     </params>
     <reportType>CustomEntity$Module_Progress__c</reportType>
-    <scope>user</scope>
+    <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>

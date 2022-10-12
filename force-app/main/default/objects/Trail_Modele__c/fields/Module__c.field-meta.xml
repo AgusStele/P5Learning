@@ -4,7 +4,6 @@
     <externalId>false</externalId>
     <label>Module</label>
     <referenceTo>Module__c</referenceTo>
-    <relationshipLabel>Trails-Modules</relationshipLabel>
     <relationshipName>Trails_Modules</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>

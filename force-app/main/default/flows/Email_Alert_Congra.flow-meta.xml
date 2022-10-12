@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Email_Alert_Congra</name>
-        <label>Email Alert Congra</label>
+        <name>prueba_email_student</name>
+        <label>prueba email student</label>
         <locationX>176</locationX>
         <locationY>335</locationY>
-        <actionName>User.Congratulations</actionName>
-        <actionType>emailAlert</actionType>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>SObjectRowId</name>
+            <name>emailBody</name>
             <value>
-                <elementReference>$User.Id</elementReference>
+                <elementReference>StudentEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.User__r.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>$Record.User__r.FirstName</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -42,7 +60,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Email_Alert_Congra</targetReference>
+            <targetReference>prueba_email_student</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -56,5 +74,10 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <textTemplates>
+        <name>StudentEmail</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong&gt;Congratulations! &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;You have completed {!$Record.Module__r.Name}&lt;/p&gt;&lt;p&gt;You&apos;ve got &lt;strong&gt;{!$Record.Points__c} points&lt;/strong&gt;.&lt;/p&gt;</text>
+    </textTemplates>
 </Flow>

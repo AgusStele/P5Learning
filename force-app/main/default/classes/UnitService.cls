@@ -16,10 +16,10 @@ public with sharing class UnitService {
         if(unitProSearch == null){
             Unit__c unitIdQuery = [SELECT Module__c FROM Unit__c WHERE Id = :unitId];
 
-            Module__c checkModule = [SELECT (SELECT Id FROM Modules_Progress__r WHERE User__c = :userId) FROM Module__c WHERE Id = :unitIdQuery.Module__c];
+            Module__c checkModule = [SELECT Skills__C, (SELECT Id FROM Modules_Progress__r WHERE User__c = :userId) FROM Module__c WHERE Id = :unitIdQuery.Module__c];
 
             if(checkModule.Modules_Progress__r.size() == 0){
-                Module_Progress__c moduleProToInsert = new Module_Progress__c(Module__c = unitIdQuery.Module__c, User__c = userId);
+                Module_Progress__c moduleProToInsert = new Module_Progress__c(Module__c = unitIdQuery.Module__c, User__c = userId, Status__c = 'In Progress', Skills__C = checkModule.Skills__C );
             
                 insert moduleProToInsert;
             }
@@ -71,13 +71,13 @@ public with sharing class UnitService {
     @AuraEnabled(cacheable=false)
     public static String metodoDos(Id unitId, String optionByquestion){
 		Id userId = UserInfo.getUserId();
-        System.debug(unitId + ' ' + optionByQuestion);
+        System.debug(unitId + ' ' + optionByquestion);
 
         
         //TRAER QUESTION PROGRESS PARA VER SI EXISTE. SI EXISTE NO CREAR UNO NUEVO Y ACTUALIZAR LOS DATOS
         //CASO CONTRARIO CREAR QUESTION PROGRESS
         Unit_Progress__c insertedUnitProgress = [SELECT Id, Status__c, Counter__c, Points__c, Unit__r.Points__c, (SELECT Question__c, Option__c FROM Questions_Progress__r) FROM Unit_Progress__c WHERE Unit__c = :unitId AND User__c = :userId];
-        System.debug(optionByQuestion);
+        System.debug(optionByquestion);
 
         Map<Id, Id> optsByQuestion = (Map<Id, Id>)JSON.deserializeStrict( optionByquestion, Map<Id, Id>.class);
 

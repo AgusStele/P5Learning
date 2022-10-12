@@ -31,8 +31,10 @@ export default class TrailView extends LightningElement {
     get style() {
         return `width: ${this.progressTrail}%`;
     }
+
+
     
-    // handleClick() {
-    //     console.log(this.thisUnits);
-    // }
+    handleClick() {
+        console.log(this.progressTrail);
+    }
 }

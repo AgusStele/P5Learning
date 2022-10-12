@@ -28,9 +28,8 @@ export default class QuestionContent extends LightningElement {
     }
 
     handleSubmit(){
-        console.log(this.submitAnswers);
         if(this.submitAnswersLenght.length == this.thisQuestions.length){
-            metodoDos({unitId: this.unitId, optionByQuestion: JSON.stringify(this.submitAnswers)})
+            metodoDos({unitId: this.unitId, optionByquestion: JSON.stringify(this.submitAnswers)})
             .then((status)=>{
                 if(status == 'Success'){
                     this.dispatchEvent(new ShowToastEvent({
@@ -47,7 +46,7 @@ export default class QuestionContent extends LightningElement {
                 }
             })
             .catch((error) =>{
-                console.log(error);
+                console.log(error)
                 this.dispatchEvent(new ShowToastEvent({
                     title: 'Error',
                     message: error.message,
